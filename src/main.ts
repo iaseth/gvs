@@ -1,23 +1,22 @@
-import fs from "fs";
-
-import { doStuff } from './utils';
+import { commands } from "./commands";
 
 
 
 export function main (args: string[]) {
-	if (args.length === 0) {
-		console.log("No args supplied!");
-	} else if (args.length === 1) {
-		const filePath = args[0];
-		if (fs.existsSync(filePath)) {
-			console.log(`Path found: '${filePath}'`);
-			if (filePath.endsWith(".njk")) {
-				doStuff(filePath);
-			}
-		} else {
-			console.log(`Path NOT found: '${filePath}'`);
-		}
-	} else {
-		console.log("Too many args supplied!");
+	const [command=false, ...rest] = args;
+	const flags = rest.filter(arg => arg.startsWith("-"));
+	const paths = rest.filter(arg => !arg.startsWith("-"));
+
+	if (!command) {
+		console.log("No command was specified!");
+		return;
+	}
+
+	switch (command) {
+		case "c":
+		case "compile":
+			commands.compileStuff(flags, paths); break;
+		default:
+			console.log(`Unknown command: '${command}'`);
 	}
 }
