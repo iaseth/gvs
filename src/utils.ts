@@ -17,5 +17,5 @@ export function doStuff (filePath: string) {
 	const njkContents = fs.readFileSync(filePath, "utf8");
 	const svgContents = renderNunjucksToSvg(njkContents);
 	fs.writeFileSync(svgOutputFilePath, svgContents);
-	console.log(`Saved: '${svgOutputFilePath}'`);
+	console.log(`Saved SVG: '${svgOutputFilePath}'`);
 }

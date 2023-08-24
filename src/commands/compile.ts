@@ -3,7 +3,7 @@ import { doStuff } from "../utils";
 
 
 
-export function compileStuff (flags: string[], paths: string[]) {
+export function compileCommand (flags: string[], paths: string[]) {
 	if (paths.length === 0) {
 		console.log(`Nothing to compile!`);
 		return;

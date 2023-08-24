@@ -1,7 +1,9 @@
-import { compileStuff } from "./compile";
+import { compileCommand } from "./compile";
+import { liveCommand } from "./live";
 
 
 
 export const commands = {
-	compileStuff
+	compileCommand,
+	liveCommand
 };

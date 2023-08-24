@@ -15,7 +15,10 @@ export function main (args: string[]) {
 	switch (command) {
 		case "c":
 		case "compile":
-			commands.compileStuff(flags, paths); break;
+			commands.compileCommand(flags, paths); break;
+		case "l":
+		case "live":
+			commands.liveCommand(flags, paths); break;
 		default:
 			console.log(`Unknown command: '${command}'`);
 	}
