@@ -1,6 +1,6 @@
 {
   "name": "gvs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,14 @@
   "bin": {
     "gvs": "./cli.js"
   },
-  "keywords": ["svg"],
+  "keywords": [
+    "svg"
+  ],
   "author": "iaseth",
   "homepage": "https://github.com/iaseth/gvs",
   "repository": "iaseth/gvs",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  }
 }
