@@ -4,10 +4,11 @@
 {% set barHeight = size - barWidth %}
 
 {% set red = "#dc2626" %}
+{% set black = "#222222" %}
 
 <svg width="{{ size }}" height="{{ size }}" xmlns="http://www.w3.org/2000/svg">
 	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="0" y="{{ barWidth }}" fill="{{ red }}" />
-	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="0" y="0" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="0" y="0" fill="{{ black }}" />
 	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="{{ barHeight }}" y="0" fill="{{ red }}" />
-	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="{{ barWidth }}" y="{{ barHeight }}" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="{{ barWidth }}" y="{{ barHeight }}" fill="{{ black }}" />
 </svg>
