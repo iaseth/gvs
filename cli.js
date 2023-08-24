@@ -4,14 +4,6 @@ const gvs = require("./dist");
 
 
 
-function doStuff (filePath) {
-	const svgOutputFilePath = filePath.slice(0, -4) + ".svg";
-	const njkContents = fs.readFileSync(filePath, "utf8");
-	const svgContents = gvs.renderNunjucksToSvg(njkContents);
-	fs.writeFileSync(svgOutputFilePath, svgContents);
-	console.log(`Saved: '${svgOutputFilePath}'`);
-}
-
 function main (args) {
 	if (args.length === 0) {
 		console.log("No args supplied!");
@@ -20,7 +12,7 @@ function main (args) {
 		if (fs.existsSync(filePath)) {
 			console.log(`Path found: '${filePath}'`);
 			if (filePath.endsWith(".njk")) {
-				doStuff(filePath);
+				gvs.doStuff(filePath);
 			}
 		} else {
 			console.log(`Path NOT found: '${filePath}'`);
