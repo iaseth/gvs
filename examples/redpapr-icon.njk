@@ -1,0 +1,16 @@
+
+{% set size = 400 %}
+{% set barWidth = 150 %}
+{% set gap = 10 %}
+{% set barHeight = size - barWidth - gap %}
+
+{% set rx = 10 %}
+{% set red = "#dc2626" %}
+{% set black = "#222222" %}
+
+<svg width="{{ size }}" height="{{ size }}" xmlns="http://www.w3.org/2000/svg">
+	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="0" y="{{ barWidth + gap }}" fill="{{ red }}" rx="{{ rx }}" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="0" y="0" fill="{{ black }}" rx="{{ rx }}" />
+	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="{{ barHeight + gap }}" y="0" fill="{{ red }}" rx="{{ rx }}" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="{{ barWidth + gap }}" y="{{ barHeight + gap }}" fill="{{ black }}" rx="{{ rx }}" />
+</svg>
