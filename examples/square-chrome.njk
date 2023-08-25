@@ -1,0 +1,16 @@
+
+{% set size = 400 %}
+{% set barWidth = 124 %}
+{% set gap = 14 %}
+{% set barHeight = size - barWidth - gap %}
+{% set squareSize = barHeight - barWidth - gap %}
+
+{% set rx = 5 %}
+
+<svg width="{{ size }}" height="{{ size }}" xmlns="http://www.w3.org/2000/svg">
+	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="0" y="{{ barWidth + gap }}" fill="{{ tailwind.indigo.n600 }}" rx="{{ rx }}" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="0" y="0" fill="{{ tailwind.green.n600 }}" rx="{{ rx }}" />
+	<rect width="{{ barWidth }}" height="{{ barHeight }}" x="{{ barHeight + gap }}" y="0" fill="{{ tailwind.blue.n600 }}" rx="{{ rx }}" />
+	<rect width="{{ barHeight }}" height="{{ barWidth }}" x="{{ barWidth + gap }}" y="{{ barHeight + gap }}" fill="{{ tailwind.green.n600 }}" rx="{{ rx }}" />
+	<rect width="{{ squareSize }}" height="{{ squareSize }}" x="{{ barWidth + gap }}" y="{{ barWidth + gap }}" fill="{{ tailwind.red.n600 }}" rx="{{ rx }}" />
+</svg>
